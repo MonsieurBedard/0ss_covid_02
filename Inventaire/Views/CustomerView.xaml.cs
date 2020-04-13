@@ -2,6 +2,8 @@
 using BillingManagement.UI.ViewModels;
 using System.Windows;
 
+// Test
+
 namespace Inventaire
 {
     /// <summary>
