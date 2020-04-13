@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 
 namespace BillingManagement.Models
 {
@@ -40,6 +41,19 @@ namespace BillingManagement.Models
         public double FedTax => SubTotal * 0.05;
         public double ProvTax => SubTotal * 0.09975;
         public double Total => SubTotal + FedTax + ProvTax;
+
+        public Invoice()
+        {
+            InvoiceId = Interlocked.Increment(ref nextId);
+            CreationDateTime = DateTime.Now;
+        }
+
+        public Invoice(Customer arg)
+        {
+            InvoiceId = Interlocked.Increment(ref nextId);
+            Customer = arg;
+            CreationDateTime = DateTime.Now;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
