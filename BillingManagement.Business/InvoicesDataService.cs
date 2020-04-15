@@ -2,28 +2,31 @@
 using BillingManagement.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
 namespace BillingManagement.Business
 {
-    class InvoicesDataService : IDataService<Invoice>
+    public class InvoicesDataService : IDataService<Invoice>
     {
-        readonly List<Invoice> invoices;
+        readonly List<Invoice> invoices = new List<Invoice>();
 
         List<Customer> customers = new CustomersDataService().GetAll().ToList();
 
         public InvoicesDataService()
         {
-            initValues();
+            InitValues();
         }
 
-        private void initValues()
+        private void InitValues()
         {
             Random rnd = new Random();
 
-            foreach (var customer in customers)
+            foreach (Customer customer in customers)
             {
+                customer.Invoices = new ObservableCollection<Invoice>();
+
                 int nbInvoices = rnd.Next(10);
 
                 for (int i = 0; i < nbInvoices; i++)
