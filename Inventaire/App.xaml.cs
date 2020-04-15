@@ -9,13 +9,13 @@ namespace Inventaire
     /// </summary>
     public partial class App : Application
     {
-        CustomerView _window;
+        MainView _window;
         //InvoiceView _invoiceWindow;
 
         public App()
         {
             CustomerViewModel vm = new CustomerViewModel();
-            _window = new CustomerView(vm);
+            _window = new MainView(vm);
 
             //InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
             //_invoiceWindow = new InvoiceView(invoiceViewModel);
