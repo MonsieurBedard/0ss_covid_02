@@ -37,9 +37,10 @@
                     <MenuItem Header="Coller"/>
                 </MenuItem>
                 <MenuItem Header="Affichage">
-                    <MenuItem Header="Fonction 1"/>
-                    <MenuItem Header="Fonction 2"/>
-                    <MenuItem Header="Fonction 3"/>
+                    <MenuItem Header="Clients" Command="{Binding ChangeViewCommand}" CommandParameter="c"/>
+                    <MenuItem Header="Factures" Command="{Binding ChangeViewCommand}" CommandParameter="i"/>
+                </MenuItem>
+                <MenuItem Header="Enregistrement">
                 </MenuItem>
             </Menu>
         </StackPanel>
