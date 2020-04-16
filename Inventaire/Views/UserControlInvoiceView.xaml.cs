@@ -19,14 +19,9 @@ namespace BillingManagement.UI.Views
     /// </summary>
     public partial class UserControlInvoiceView : UserControl
     {
-        InvoiceViewModel _vm;
-
-        public UserControlInvoiceView(InvoiceViewModel vm)
+        public UserControlInvoiceView()
         {
             InitializeComponent();
-
-            _vm = vm;
-            DataContext = _vm;
         }
     }
 }
